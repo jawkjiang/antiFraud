@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/jawkjiang/antiFraud.git/static/css/main.58a0cc86.css",
+    "main.js": "/jawkjiang/antiFraud.git/static/js/main.0e0e26cb.js",
+    "static/js/488.62b7e3b2.chunk.js": "/jawkjiang/antiFraud.git/static/js/488.62b7e3b2.chunk.js",
+    "index.html": "/jawkjiang/antiFraud.git/index.html",
+    "main.58a0cc86.css.map": "/jawkjiang/antiFraud.git/static/css/main.58a0cc86.css.map",
+    "main.0e0e26cb.js.map": "/jawkjiang/antiFraud.git/static/js/main.0e0e26cb.js.map",
+    "488.62b7e3b2.chunk.js.map": "/jawkjiang/antiFraud.git/static/js/488.62b7e3b2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.58a0cc86.css",
+    "static/js/main.0e0e26cb.js"
+  ]
+}
