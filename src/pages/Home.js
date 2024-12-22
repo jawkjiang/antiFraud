@@ -1,18 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Home() {
   const Cards = [
-    { id: 1, title: "神秘女人", img: "/images/home/剪影1.png" },
-    { id: 2, title: "正义警察", img: "/images/home/剪影2.png" },
-    { id: 3, title: "刷爆黑卡", img: "/images/home/剪影3.png" },
-    { id: 4, title: "美妆代购", img: "/images/home/剪影4.png" },
+    { id: 1, title: "神秘女人", img: `${process.env.PUBLIC_URL}/images/home/剪影1.png` },
+    { id: 2, title: "正义警察", img: `${process.env.PUBLIC_URL}/images/home/剪影2.png` },
+    { id: 3, title: "刷爆黑卡", img: `${process.env.PUBLIC_URL}/images/home/剪影3.png` },
+    { id: 4, title: "美妆代购", img: `${process.env.PUBLIC_URL}/images/home/剪影4.png` },
   ];
 
   const videos = [
-    { id: 1, title: "“诈”往“诈”来", img: "/images/videos/视频1.jpg", link: "/videos/视频1.mp4" },
-    { id: 2, title: "屏幕彼岸", img: "/images/videos/视频2.jpg", link: "/videos/视频2.mp4" },
-    { id: 3, title: "魔镜啊魔镜", img: "/images/videos/视频3.jpg", link: "/videos/视频3.mp4" },
-    { id: 4, title: "重生之我再也不卷了", img: "/images/videos/视频4.jpg", link: "/videos/视频4.mp4" },
+    { id: 1, title: "“诈”往“诈”来", img: `${process.env.PUBLIC_URL}/images/videos/视频1.jpg`, link: `${process.env.PUBLIC_URL}/videos/视频1.mp4` },
+    { id: 2, title: "屏幕彼岸", img: `${process.env.PUBLIC_URL}/images/videos/视频2.jpg`, link: `${process.env.PUBLIC_URL}/videos/视频2.mp4` },
+    { id: 3, title: "魔镜啊魔镜", img: `${process.env.PUBLIC_URL}/images/videos/视频3.jpg`, link: `${process.env.PUBLIC_URL}/videos/视频3.mp4` },
+    { id: 4, title: "重生之我再也不卷了", img: `${process.env.PUBLIC_URL}/images/videos/视频4.jpg`, link: `${process.env.PUBLIC_URL}/videos/视频4.mp4` },
   ];
 
   return (
@@ -24,7 +25,7 @@ function Home() {
           <div
             className="absolute inset-0 bg-center bg-no-repeat mx-auto bg-gray-50"
             style={{
-              backgroundImage: `url('/images/home/首页首图.png')`,
+              backgroundImage: `url('${process.env.PUBLIC_URL}/images/home/首页首图.png')`,
               backgroundSize: "auto 100%",
             }}
           ></div>
@@ -45,18 +46,19 @@ function Home() {
           {/* 卡片区域 */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-4">
               {Cards.map((card) => (
-                <a
-                  key={card.id}
-                  href="/who"
-                  className="bg-white shadow-md rounded-lg p-4 flex flex-col items-center border border-gray-300 cursor-pointer hover:scale-105 transition-transform duration-300"
-                >
-                  <img
-                    src={card.img}
-                    alt={card.title}
-                    className="w-3/4 rounded-lg mb-4"
-                  />
-                  <h3 className="text-xl font-bold">{card.title}</h3>
-                </a>
+                <Link to="/who" key={card.id} className="block">
+                  <div
+                    key={card.id}
+                    className="bg-white shadow-md rounded-lg p-4 flex flex-col items-center border border-gray-300 cursor-pointer hover:scale-105 transition-transform duration-300"
+                  >
+                    <img
+                      src={card.img}
+                      alt={card.title}
+                      className="w-3/4 rounded-lg mb-4"
+                    />
+                    <h3 className="text-xl font-bold">{card.title}</h3>
+                  </div>
+                </Link>
               ))}
             </div>
         </div>
@@ -75,11 +77,13 @@ function Home() {
 
           {/* 第一张卡片 */}
           <div className="flex flex-col sm:flex-row items-center gap-6 mb-8 border border-gray-300 p-4 rounded-lg shadow-md bg-white">
-            <img
-              src="/images/home/匿名探问左侧图.png"
-              alt="探问图片1"
-              className="w-48 h-auto rounded-lg"
-            />
+            <Link to="/anonymous" className="block">
+              <img
+                src={`${process.env.PUBLIC_URL}/images/home/匿名探问左侧图.png`}
+                alt="探问图片1"
+                className="w-48 h-auto rounded-lg"
+              />
+            </Link>
             <p className="text-gray-700 text-lg flex-1 border-l-2 pl-2 pr-2 border-gray-300">
               该不该借钱给她？
             </p>
@@ -87,11 +91,13 @@ function Home() {
 
           {/* 第二张卡片 */}
           <div className="flex flex-col sm:flex-row-reverse items-center gap-6 border border-gray-300 p-4 rounded-lg shadow-md bg-white">
-            <img
-              src="/images/home/匿名探问右侧图.png"
-              alt="探问图片2"
-              className="w-48 h-auto rounded-lg"
-            />
+            <Link to="/anonymous" className="block">
+              <img
+                src={`${process.env.PUBLIC_URL}/images/home/匿名探问右侧图.png`}
+                alt="探问图片2"
+                className="w-48 h-auto rounded-lg"
+              />
+            </Link>
             <p className="text-gray-700 text-lg flex-1 border-r-2 pr-2 pl-2 border-gray-300">
               我在交友网站认识了一个人，我们聊得很好，而且都觉得彼此是对方共度余生的人，我们越来越走进彼此的内心，她每天都会陪我聊到很晚，有天她说她父母重病要借一大笔钱，我好纠结，我都没见过她父母，该怎么办？
             </p>
@@ -108,6 +114,12 @@ function Home() {
             <span className="absolute inset-0 top-6 left-0 text-gray-400 text-lg uppercase opacity-30 pointer-events-none">
               Insight
             </span>
+            <h2 className="text-lg pt-4">
+              来源：
+              <span className="text-blue-600 hover:underline cursor-pointer">
+                @尔虞我诈诈诈
+              </span>
+            </h2>
           </div>
 
           {/* 视频布局 */}

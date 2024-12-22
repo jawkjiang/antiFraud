@@ -7,16 +7,14 @@ import Home from "./pages/Home";
 import Who from "./pages/Who"
 import Archive from "./pages/Archive";
 import Anonymous from "./pages/Anonymous";
-import Mine from "./pages/Mine";
+import Mine from "./pages/Mine.js";
 
 function App() {
   return (
-    <Router>
-      {/* 定义路由结构 */}
+    <Router basename="/antiFraud">
       <Routes>
-        {/* 应用全局布局 */}
         <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} /> {/* 默认首页 */}
+          <Route index element={<Home />} />
         </Route>
         <Route path="/who" element={<Layout />}>
           <Route index element={<Who />} />
@@ -32,6 +30,7 @@ function App() {
         </Route>
       </Routes>
     </Router>
+
   );
 }
 

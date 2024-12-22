@@ -29,19 +29,19 @@ function Mine() {
   const followedUsers = [
     {
       id: 1,
-      img: "/images/anonymous/头像3.jpg",
+      img: `${process.env.PUBLIC_URL}/images/anonymous/头像3.jpg`,
       name: "心灵旅行者",
       description: "社会心理学专家，分析诈骗者心理与动机。",
     },
     {
       id: 2,
-      img: "/images/anonymous/头像4.jpg",
+      img: `${process.env.PUBLIC_URL}/images/anonymous/头像4.jpg`,
       name: "旅行咖啡馆",
       description: "医学专家，帮助分析健康类诈骗事件。",
     },
     {
       id: 3,
-      img: "/images/anonymous/头像5.jpg",
+      img: `${process.env.PUBLIC_URL}/images/anonymous/头像5.jpg`,
       name: "生活拼图",
       description: "IT 技术专家，专注于网络诈骗与数据安全领域。",
     },
@@ -56,7 +56,7 @@ function Mine() {
         <div className="bg-white rounded-lg shadow-md p-4 flex gap-4 mb-8">
           {/* 左侧头像 */}
           <img
-            src="/images/mine/我的头像.jpg"
+            src={`${process.env.PUBLIC_URL}/images/mine/我的头像.jpg`}
             alt="个人头像"
             className="w-24 h-24 object-cover rounded-full"
           />

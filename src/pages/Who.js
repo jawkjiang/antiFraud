@@ -3,26 +3,28 @@ import React, { useState } from "react";
 function Who() {
   // 定义卡片数据
   const Cards = [
-    { id: 1, title: "神秘女人", img: "/images/home/剪影1.png" },
-    { id: 2, title: "正义警察", img: "/images/home/剪影2.png" },
-    { id: 3, title: "刷爆黑卡", img: "/images/home/剪影3.png" },
-    { id: 4, title: "美妆代购", img: "/images/home/剪影4.png" },
+    { id: 1, title: "神秘女人", img: `${process.env.PUBLIC_URL}/images/home/剪影1.png` },
+    { id: 2, title: "正义警察", img: `${process.env.PUBLIC_URL}/images/home/剪影2.png` },
+    { id: 3, title: "刷爆黑卡", img: `${process.env.PUBLIC_URL}/images/home/剪影3.png` },
+    { id: 4, title: "美妆代购", img: `${process.env.PUBLIC_URL}/images/home/剪影4.png` },
   ];
+
+  const activeId = 1; // 激活的卡片 ID
 
   // 定义分页数据
   const pages = [
     {
-      img: "/images/who/第一个选择题左边的美女图.png",
+      img: `${process.env.PUBLIC_URL}/images/who/第一个选择题左边的美女图.png`,
       text: "你是一个平平无奇的大学生，日复一日重复着单调的生活。突然有一天，你收到了一条微信好友申请。对方自称是你的高中同学，你怀着好奇的心点开她的朋友圈主页，惊奇地发现竟是一位阳关开朗的漂亮女孩，名叫X。",
       options: ["A. 怀着窃喜的心情立刻通过好友申请", "B. 淡定地回复她，你认错人了", "C. 果断拒绝申请，当作没看到"],
     },
     {
-      img: "images/who/第二个选择题右边的热恋图.png",
+      img: `${process.env.PUBLIC_URL}/images/who/第二个选择题右边的热恋图.png`,
       text: "和X相谈几周，她向你袒露了更多的个人信息，谈到了自己的家庭和生活。渐渐地你被x的热情真诚所打动，她开始走进你的心房。你迷恋上和她聊天的感觉。突然有一天，她向你哭诉最近生活的困难并开口向你借800元渡过困难。",
       options: ["A. 你决定相信X，迅速打款800元", "B. 热心安慰，但拒绝了X的借款申请", "C. 疑心骤起，停止与X的聊天"],
     },
     {
-      img: "images/who/最后一个选择题左边被诈骗图片.png",
+      img: `${process.env.PUBLIC_URL}/images/who/最后一个选择题左边被诈骗图片.png`,
       text: "给x打款后，发现她的聊天态度由热情极速转向冷淡。你的心中涌起了焦虑与委屈的情绪，向她发消息询问原因，回应你的却只有沉默。三天后，当你再一次鼓起勇气向x发消息时，一个红色感叹号出现了。",
       options: ["A.破口大骂，陷入失恋的痛苦", "B.发现不对劲，向辅导员求助", "C.怕丢了面子，一个人默默承受后果"],
     },
@@ -66,7 +68,11 @@ function Who() {
             {Cards.map((card) => (
               <div
                 key={card.id}
-                className="bg-white shadow-md rounded-lg p-4 flex flex-col items-center cursor-pointer hover:scale-105 transition-transform duration-300"
+                className={`bg-white shadow-md rounded-lg p-4 flex flex-col items-center cursor-pointer transition-transform duration-300 ${
+                  card.id === activeId
+                    ? "border-4 border-blue-300 scale-110"
+                    : "hover:scale-105"
+                }`}
               >
                 <img
                   src={card.img}

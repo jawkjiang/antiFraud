@@ -45,7 +45,67 @@ function Archive() {
       <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">
         骗局档案
       </h1>
-      <div className="max-w-screen-2xl mx-auto px-4 grid grid-cols-2 gap-8">
+
+      {/* 文本框 */}
+      <div className="relative bg-white rounded-lg shadow-md p-4 mb-6 mx-auto" style={{ maxWidth: "800px" }}>
+          {/* 默认文本 */}
+          <textarea
+            placeholder="说说你的故事吧！"
+            className="w-full h-24 border border-gray-300 rounded-lg p-2 resize-none focus:outline-none"
+          ></textarea>
+
+          {/* 工具栏 */}
+          <div className="absolute bottom-2 right-2 flex gap-2">
+            {/* 拖拽文件 */}
+            <button
+              className="flex items-center justify-center w-8 h-8 bg-gray-50 hover:bg-gray-300 rounded-full"
+              title="拖拽文件"
+            >
+              📂
+            </button>
+            {/* @某人 */}
+            <button
+              className="flex items-center justify-center w-8 h-8 bg-gray-50 hover:bg-gray-300 rounded-full"
+              title="@某人"
+            >
+              @
+            </button>
+
+            {/* 添加tag */}
+            <button
+              className="flex items-center justify-center w-8 h-8 bg-gray-50 hover:bg-gray-300 rounded-full"
+              title="添加tag"
+            >
+              #
+            </button>
+
+            {/* 发送 */}
+            <button
+              className="flex items-center justify-center w-8 h-8 bg-blue-500 text-white hover:bg-blue-600 rounded-full"
+              title="发送"
+            >
+              ➤
+            </button>
+          </div>
+        </div>
+
+        {/* 按钮布局 */}
+        <div className="flex justify-between mt-4 max-w-lg mx-auto">
+          <button className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
+            筛选
+          </button>
+          <button className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
+            最新
+          </button>
+          <button className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
+            最热
+          </button>
+          <button className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
+            视频
+          </button>
+        </div>
+
+      <div className="max-w-screen-2xl mx-auto px-4 grid grid-cols-2 gap-8 pt-12">
         {/* 左侧列 */}
         <div className="flex flex-col gap-8 border-r-2 border-gray-300 pr-4">
           {columnData
